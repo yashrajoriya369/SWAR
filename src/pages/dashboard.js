@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import CircularProgressBar from "../component/CircularProgressBar";
+import React from "react";
 
 const Dashboard = () => {
   return (
