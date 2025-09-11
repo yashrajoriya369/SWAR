@@ -51,7 +51,7 @@ const MainLayout = () => {
           </i>{" "}
           Our Team
         </Link>
-        <Link to="/login">
+        <Link to="/">
           <i className="bi bi-box-arrow-right me-2">
             <CiLogout />
           </i>{" "}
