@@ -34,11 +34,11 @@ body {
   border-radius: 50px;
   margin: 0px 15px 10px 18px;
 }
-.sidebar .user-information p{
+.sidebar .user-information p {
   font-size: 0.8rem;
   margin-top: -5px;
 }
-.sidebar a{
+.sidebar a {
   color: #fff;
   display: block;
   padding: 10px 20px;
@@ -50,7 +50,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid #ffffff;
 }
-.sidebar .bi{
+.sidebar .bi {
   font-size: 18px;
 }
 
@@ -65,9 +65,9 @@ body {
   color: #fff;
   min-height: 150px;
 }
-.card-gray{
+.card-gray {
   /* background-color: #b2beb5 ; */
-  background-color: #808000  ;
+  background-color: #808000;
 }
 .card-green {
   background: #4caf50;
@@ -85,41 +85,29 @@ body {
   background: #ff9800;
 }
 
-.card-gray:hover{
-  background: #FFF;
-  color: #808000;
-  border: 1px solid #808000;
-  transition: 0.25s ease-in;
+.card-gray:hover h5 {
+  font-size: 2rem;
+  transition: 0.20s ease;
 }
-.card-green:hover {
-  background: #FFF;
-  color: #4caf50;
-  border: 1px solid #4caf50;
-  transition: 0.25s ease-in;
+.card-green:hover h5 {
+  font-size: 2rem;
+  transition: 0.20s ease-in;
 }
-.card-yellow:hover {
-  background: #FFF;
-  color: #fbc02d;
-  border: 1px solid #fbc02d;
-  transition: 0.25s ease-in;
+.card-yellow:hover h5 {
+  font-size: 2rem;
+  transition: 0.20s ease-in;
 }
-.card-blue:hover {
-  background: #FFF;
-  color: #2196f3;
-  border: 1px solid #2196f3;
-  transition: 0.25s ease-in;
+.card-blue:hover h5 {
+  font-size: 2rem;
+  transition: 0.20s ease-in;
 }
-.card-pink:hover {
-  background: #FFF;
-  color: #e91e63;
-  border: 1px solid #e91e63;
-  transition: 0.25s ease-in;
+.card-pink:hover h5 {
+  font-size: 2rem;
+  transition: 0.20s ease-in;
 }
-.card-orange:hover {
-  background: #FFF;
-  color: #ff9800;
-  border: 1px solid #ff9800;
-  transition: 0.25s ease-in;
+.card-orange:hover h5 {
+  font-size: 2rem;
+  transition: 0.20s ease-in;
 }
 
 .stats-card {
