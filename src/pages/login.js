@@ -38,12 +38,12 @@ const Login = () => {
                 </div>
               </div>
 
-              <button
+              <Link to="/admin"
                 type="submit"
                 className="btn btn-primary w-100 mt-3 rounded"
               >
                 Login
-              </button>
+              </Link>
 
               <div className="auth-footer">
                 <Link to="">Forgot your password?</Link>
@@ -64,7 +64,6 @@ const Login = () => {
                 <button className="social-btn linkedin">
                   <i className="fab fa-linkedin"></i> LinkedIn
                 </button>
-                <Link to="/admin">Updation</Link>
               </div>
             </div>
           </div>
