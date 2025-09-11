@@ -21,7 +21,7 @@ const MainLayout = () => {
             <p>Student</p>
           </div>
         </div>
-        <Link to="/">
+        <Link to="/admin">
           <i className="bi bi-speedometer2 me-2">
             <RxDashboard />
           </i>{" "}
@@ -51,7 +51,7 @@ const MainLayout = () => {
           </i>{" "}
           Our Team
         </Link>
-        <Link to="/">
+        <Link to="/login">
           <i className="bi bi-box-arrow-right me-2">
             <CiLogout />
           </i>{" "}
