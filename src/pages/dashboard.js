@@ -21,7 +21,7 @@ const Dashboard = () => {
         </div>
         <div className="cards col-md-4">
           <div className="card-custom card-yellow">
-            <h5>Jumple Parawords</h5>
+            <h5>Jumble Parawords</h5>
             <p>00 lessons</p>
             <span>0.0%</span>
           </div>
