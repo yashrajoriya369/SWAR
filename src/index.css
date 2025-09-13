@@ -3,6 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --primary: #2c5cc5;
+  --primary-dark: #1a4bb3;
+  --secondary: #4caf50;
+  --accent: #ff6b6b;
+  --light: #f5f7fa;
+  --dark: #2d3436;
+  --gray: #7a7a7a;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s ease;
+}
+
 body {
   background: #f5f7fa;
   font-family: "Segoe UI", sans-serif;
@@ -87,27 +101,27 @@ body {
 
 .card-gray:hover h5 {
   font-size: 2rem;
-  transition: 0.20s ease;
+  transition: 0.2s ease;
 }
 .card-green:hover h5 {
   font-size: 2rem;
-  transition: 0.20s ease-in;
+  transition: 0.2s ease-in;
 }
 .card-yellow:hover h5 {
   font-size: 2rem;
-  transition: 0.20s ease-in;
+  transition: 0.2s ease-in;
 }
 .card-blue:hover h5 {
   font-size: 2rem;
-  transition: 0.20s ease-in;
+  transition: 0.2s ease-in;
 }
 .card-pink:hover h5 {
   font-size: 2rem;
-  transition: 0.20s ease-in;
+  transition: 0.2s ease-in;
 }
 .card-orange:hover h5 {
   font-size: 2rem;
-  transition: 0.20s ease-in;
+  transition: 0.2s ease-in;
 }
 
 .stats-card {
@@ -118,29 +132,6 @@ body {
 }
 
 /* Login Page CSS Starts Here */
-
-:root {
-  --primary: #2c5cc5;
-  --primary-dark: #1a4bb3;
-  --secondary: #4caf50;
-  --accent: #ff6b6b;
-  --light: #f5f7fa;
-  --dark: #2d3436;
-  --gray: #7a7a7a;
-  --border-radius: 12px;
-  --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --transition: all 0.3s ease;
-}
-
-body {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  color: var(--dark);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -162,10 +153,17 @@ body {
 }
 
 .container {
+  
+}
+
+.container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: var(--dark);
+  min-height: 100vh;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .auth-box {
@@ -200,8 +198,8 @@ body {
 
 .auth-icon {
   position: absolute;
-  top: -20px;
-  right: 20px;
+  top: -10px;
+  right: -10px;
   background: white;
   color: var(--primary);
   width: 60px;
@@ -261,8 +259,8 @@ body {
 .password-toggle i:hover {
   color: var(--primary);
 }
-/* 
-.btn {
+
+.btn-login {
   display: block;
   width: 100%;
   padding: 16px;
@@ -274,12 +272,12 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
-} */
+}
 
-/* .btn:hover {
+.btn:hover {
   background: linear-gradient(135deg, var(--primary-dark), #153e9c);
   transform: translateY(-2px);
-} */
+}
 
 .auth-footer {
   text-align: center;
@@ -351,7 +349,7 @@ body {
   color: #0077b5;
 }
 
-.interview-cards {
+/* .interview-cards {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -393,7 +391,7 @@ body {
 .interview-info p {
   color: var(--gray);
   font-size: 14px;
-}
+} */
 
 .floating-shapes {
   position: absolute;
@@ -469,6 +467,5 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
 
 /* Login Page CSS Ends Here */

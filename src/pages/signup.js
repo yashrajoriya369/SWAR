@@ -1,7 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+    navigate("/");
+  };
   return (
     <div className="container">
       <div className="auth-container">
@@ -13,64 +30,83 @@ const SignUp = () => {
             <h2>Create Account</h2>
             <p>Join CLAMIS to start preparing for interviews</p>
           </div>
-          <div className="auth-form">
+
+          <form onSubmit={handleSubmit} className="auth-form">
             <div className="form-group">
-              <label for="signup-name">Full Name</label>
+              <label htmlFor="signup-name">Full Name</label>
               <input
                 type="text"
                 id="signup-name"
                 className="form-control"
                 placeholder="Enter your full name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
 
             <div className="form-group">
-              <label for="signup-email">Email</label>
+              <label htmlFor="signup-email">Email</label>
               <input
                 type="email"
                 id="signup-email"
                 className="form-control"
                 placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
             <div className="form-group">
-              <label for="signup-password">Password</label>
+              <label htmlFor="signup-password">Password</label>
               <div className="password-toggle">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   id="signup-password"
                   className="form-control"
                   placeholder="Create a password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
-                <i className="far fa-eye" id="toggle-signup-password"></i>
+                <i
+                  className={`far ${showPassword ? "fa-eye-slash" : "fa-eye"}`}
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{ cursor: "pointer" }}
+                ></i>
               </div>
             </div>
 
             <div className="form-group">
-              <label for="signup-confirm">Confirm Password</label>
+              <label htmlFor="signup-confirm">Confirm Password</label>
               <div className="password-toggle">
                 <input
-                  type="password"
+                  type={showConfirm ? "text" : "password"}
                   id="signup-confirm"
                   className="form-control"
                   placeholder="Confirm your password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-                <i className="far fa-eye" id="toggle-signup-confirm"></i>
+                <i
+                  className={`far ${showConfirm ? "fa-eye-slash" : "fa-eye"}`}
+                  onClick={() => setShowConfirm(!showConfirm)}
+                  style={{ cursor: "pointer" }}
+                ></i>
               </div>
             </div>
 
             <button
               type="submit"
-              className="btn btn-primary mt-3 rounded w-100"
+              className="btn-login"
+              disabled={!name || !email || !password || !confirmPassword}
             >
               Create Account
             </button>
 
             <div className="auth-footer">
               <p>
-                By signing up, you agree to our <Link to="#">Terms of Service</Link>{" "}
-                and <Link to="">Privacy Policy</Link>
+                By signing up, you agree to our{" "}
+                <Link to="/terms-and-conditions">Terms of Service</Link> and{" "}
+                <Link to="/privacy">Privacy Policy</Link>
               </p>
             </div>
 
@@ -90,7 +126,7 @@ const SignUp = () => {
                 <i className="fab fa-linkedin"></i> LinkedIn
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

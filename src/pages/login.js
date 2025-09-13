@@ -1,11 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate("/admin");
+  };
+
   return (
-    <div>
+    <>
       <div className="container">
-        <div className="auth-container" style={{width: "35%"}}>
+        <div className="auth-container" style={{ width: "25%" }}>
           <div className="auth-box">
             <div className="auth-header">
               <div className="auth-icon">
@@ -14,39 +24,50 @@ const Login = () => {
               <h2>Welcome Back</h2>
               <p>Sign in to continue your interview preparation</p>
             </div>
-            <div className="auth-form">
+            <form onSubmit={handleLogin} className="auth-form">
               <div className="form-group">
-                <label for="login-email">Email</label>
+                <label htmlFor="login-email">Email</label>
                 <input
                   type="email"
                   id="login-email"
                   className="form-control"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
               <div className="form-group">
-                <label for="login-password">Password</label>
+                <label htmlFor="login-password">Password</label>
                 <div className="password-toggle">
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     id="login-password"
                     className="form-control"
                     placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
-                  <i className="far fa-eye"></i>
+                  <i
+                    className={`far ${
+                      showPassword ? "fa-eye-slash" : "fa-eye"
+                    }`}
+                    onClick={() => setShowPassword(!showPassword)}
+                    style={{ cursor: "pointer" }}
+                  ></i>
                 </div>
               </div>
 
-              <Link to="/admin"
+              <button
+                to="/admin"
                 type="submit"
-                className="btn btn-primary w-100 mt-3 rounded"
+                className="btn-login"
               >
                 Login
-              </Link>
+              </button>
 
               <div className="auth-footer">
-                <Link to="">Forgot your password?</Link>
+                <Link to="forgot-password">Forgot your password?</Link>
               </div>
 
               <div className="divider">
@@ -54,7 +75,7 @@ const Login = () => {
               </div>
 
               <div className="auth-footer">
-                <Link to="/create-account">Already have an account?</Link>
+                <Link to="/create-account">Don't have an account?</Link>
               </div>
 
               <div className="social-login">
@@ -65,11 +86,11 @@ const Login = () => {
                   <i className="fab fa-linkedin"></i> LinkedIn
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
